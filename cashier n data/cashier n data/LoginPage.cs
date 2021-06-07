@@ -12,6 +12,8 @@ namespace cashier_n_data
 {
     public partial class LoginPage : Form
     {
+        private bool loginStatus;
+
         public LoginPage()
         {
             InitializeComponent();
@@ -29,7 +31,81 @@ namespace cashier_n_data
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            GetLoginStatus(tbUsername.Text.ToString(), tbPassword.Text.ToString());
 
+            if (loginStatus)
+            {
+                MessageBox.Show("Login Berhasil!");
+                LoginHandler.Username = tbUsername.Text.ToString();
+                LoginHandler.Loginstatus = true;
+                MainForms mainForms = new MainForms();
+                mainForms.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username atau password Anda salah");
+            }
         }
+
+        private void GetLoginStatus(string LoginName, string LoginPass)
+        {
+            using (var db = new CashierDBEntities())
+            {
+
+                //get query for matching txtbox text and database
+                var query = from LoginData in db.LoginDatas where LoginData.username == LoginName && LoginData.password == LoginPass select LoginData;
+                if (query.Any())
+                {
+                    loginStatus = true;
+                }
+                else
+                {
+                    loginStatus = false;
+                }
+                    
+            }
+        }
+
+        private void tbUsername_MouseClick(object sender, MouseEventArgs e)
+        {
+            tbUsername.Text = "";
+        }
+
+        private void tbPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            tbPassword.Text = "";
+        }
+
+        private void tbUsername_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbUsername.Text == "")
+                {
+                    tbUsername.Text = "Username";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tbPassword_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbPassword.Text == "")
+                {
+                    tbPassword.Text = "Password";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
 }

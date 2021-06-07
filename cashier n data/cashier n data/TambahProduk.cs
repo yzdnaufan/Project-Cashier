@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace cashier_n_data
 {
-    public partial class MainForms : Form
+    public partial class TambahProduk : Form
     {
-
-        public MainForms()
+        public TambahProduk()
         {
             InitializeComponent();
+        }
+
+        private void TambahProduk_Load(object sender, EventArgs e)
+        {
+            lblUser.Text = "Hai " + LoginHandler.Username + "!";
         }
 
         private void xButton_Click(object sender, EventArgs e)
@@ -27,20 +31,9 @@ namespace cashier_n_data
 
         private void lblKasir_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-
-        private void MainForms_Load(object sender, EventArgs e)
-        {
-            lblUser.Text = "Hai " + LoginHandler.Username + "!";
+            MainForms mainForms = new MainForms();
+            mainForms.Show();
+            this.Hide();
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
@@ -57,13 +50,6 @@ namespace cashier_n_data
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void lblAddProd_Click(object sender, EventArgs e)
-        {
-            TambahProduk tambah = new TambahProduk();
-            tambah.Show();
-            this.Hide();
         }
     }
 }
