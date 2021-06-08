@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="itemId" Type="int" Nullable="false" />
           <Property Name="itemBarcode" Type="varbinary(max)" />
         </EntityType>
@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="itemid" />
           </Key>
-          <Property Name="itemid" Type="int" Nullable="false" />
+          <Property Name="itemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="itemName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="itemPrice" Type="nvarchar" MaxLength="50" />
           <Property Name="itemDescription" Type="nvarchar" MaxLength="100" />

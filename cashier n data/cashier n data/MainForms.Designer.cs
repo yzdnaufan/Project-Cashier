@@ -30,26 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.xButton = new System.Windows.Forms.Label();
-            this.lblAddProd = new System.Windows.Forms.Label();
+            this.lblMngProd = new System.Windows.Forms.Label();
             this.lblKasir = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblLogout = new System.Windows.Forms.Label();
-            this.lblProduk = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblJumlah = new System.Windows.Forms.Label();
-            this.lblJudul = new System.Windows.Forms.Label();
-            this.itemDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
+            this.pictBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnDelItemCashier = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearCashier = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearAddProdCashier = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
+            this.lstViewCashier = new MetroFramework.Controls.MetroListView();
             this.nameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.hargaCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.jumlahCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.totalCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.tbQtty = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbProdName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRpTotal = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblJumlah = new System.Windows.Forms.Label();
+            this.lblJudul = new System.Windows.Forms.Label();
+            this.lblProduk = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblLogout = new System.Windows.Forms.Label();
+            this.lblManageMember = new System.Windows.Forms.Label();
+            this.itemDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,17 +71,17 @@
             this.xButton.Text = "X";
             this.xButton.Click += new System.EventHandler(this.xButton_Click);
             // 
-            // lblAddProd
+            // lblMngProd
             // 
-            this.lblAddProd.AutoSize = true;
-            this.lblAddProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAddProd.Font = new System.Drawing.Font("Segoe UI Black", 15F);
-            this.lblAddProd.Location = new System.Drawing.Point(12, 130);
-            this.lblAddProd.Name = "lblAddProd";
-            this.lblAddProd.Size = new System.Drawing.Size(211, 35);
-            this.lblAddProd.TabIndex = 2;
-            this.lblAddProd.Text = "Tambah Produk";
-            this.lblAddProd.Click += new System.EventHandler(this.lblAddProd_Click);
+            this.lblMngProd.AutoSize = true;
+            this.lblMngProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMngProd.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.lblMngProd.Location = new System.Drawing.Point(12, 156);
+            this.lblMngProd.Name = "lblMngProd";
+            this.lblMngProd.Size = new System.Drawing.Size(189, 35);
+            this.lblMngProd.TabIndex = 2;
+            this.lblMngProd.Text = "Kelola Produk";
+            this.lblMngProd.Click += new System.EventHandler(this.lblMngProd_Click);
             // 
             // lblKasir
             // 
@@ -92,10 +98,14 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.Controls.Add(this.metroListView1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox2);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.pictBox);
+            this.guna2Panel1.Controls.Add(this.btnDelItemCashier);
+            this.guna2Panel1.Controls.Add(this.btnClearCashier);
+            this.guna2Panel1.Controls.Add(this.btnClearAddProdCashier);
+            this.guna2Panel1.Controls.Add(this.btnTambah);
+            this.guna2Panel1.Controls.Add(this.lstViewCashier);
+            this.guna2Panel1.Controls.Add(this.tbQtty);
+            this.guna2Panel1.Controls.Add(this.tbProdName);
             this.guna2Panel1.Controls.Add(this.lblRpTotal);
             this.guna2Panel1.Controls.Add(this.lblTotal);
             this.guna2Panel1.Controls.Add(this.lblJumlah);
@@ -107,104 +117,210 @@
             this.guna2Panel1.Size = new System.Drawing.Size(878, 606);
             this.guna2Panel1.TabIndex = 3;
             // 
-            // lblUser
+            // pictBox
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI Black", 15F);
-            this.lblUser.Location = new System.Drawing.Point(12, 9);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(22, 35);
-            this.lblUser.TabIndex = 2;
-            this.lblUser.Text = " ";
-            this.lblUser.Click += new System.EventHandler(this.lblKasir_Click);
+            this.pictBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictBox.ImageRotate = 0F;
+            this.pictBox.Location = new System.Drawing.Point(143, 334);
+            this.pictBox.Name = "pictBox";
+            this.pictBox.ShadowDecoration.Parent = this.pictBox;
+            this.pictBox.Size = new System.Drawing.Size(200, 246);
+            this.pictBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictBox.TabIndex = 9;
+            this.pictBox.TabStop = false;
             // 
-            // lblLogout
+            // btnDelItemCashier
             // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Segoe UI Black", 15F);
-            this.lblLogout.Location = new System.Drawing.Point(12, 636);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(113, 35);
-            this.lblLogout.TabIndex = 2;
-            this.lblLogout.Text = "Log Out";
-            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            this.btnDelItemCashier.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelItemCashier.CheckedState.Parent = this.btnDelItemCashier;
+            this.btnDelItemCashier.CustomImages.Parent = this.btnDelItemCashier;
+            this.btnDelItemCashier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelItemCashier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelItemCashier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelItemCashier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelItemCashier.DisabledState.Parent = this.btnDelItemCashier;
+            this.btnDelItemCashier.FillColor = System.Drawing.Color.Blue;
+            this.btnDelItemCashier.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelItemCashier.ForeColor = System.Drawing.Color.White;
+            this.btnDelItemCashier.HoverState.Parent = this.btnDelItemCashier;
+            this.btnDelItemCashier.Location = new System.Drawing.Point(563, 556);
+            this.btnDelItemCashier.Name = "btnDelItemCashier";
+            this.btnDelItemCashier.ShadowDecoration.Parent = this.btnDelItemCashier;
+            this.btnDelItemCashier.Size = new System.Drawing.Size(185, 34);
+            this.btnDelItemCashier.TabIndex = 5;
+            this.btnDelItemCashier.Text = "Hapus Item Terpilih";
+            this.btnDelItemCashier.Click += new System.EventHandler(this.btnDelItemCashier_Click);
             // 
-            // lblProduk
+            // btnClearCashier
             // 
-            this.lblProduk.AutoSize = true;
-            this.lblProduk.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
-            this.lblProduk.Location = new System.Drawing.Point(22, 110);
-            this.lblProduk.Name = "lblProduk";
-            this.lblProduk.Size = new System.Drawing.Size(87, 30);
-            this.lblProduk.TabIndex = 0;
-            this.lblProduk.Text = "Produk";
+            this.btnClearCashier.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearCashier.CheckedState.Parent = this.btnClearCashier;
+            this.btnClearCashier.CustomImages.Parent = this.btnClearCashier;
+            this.btnClearCashier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearCashier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearCashier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearCashier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearCashier.DisabledState.Parent = this.btnClearCashier;
+            this.btnClearCashier.FillColor = System.Drawing.Color.Blue;
+            this.btnClearCashier.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClearCashier.ForeColor = System.Drawing.Color.White;
+            this.btnClearCashier.HoverState.Parent = this.btnClearCashier;
+            this.btnClearCashier.Location = new System.Drawing.Point(754, 556);
+            this.btnClearCashier.Name = "btnClearCashier";
+            this.btnClearCashier.ShadowDecoration.Parent = this.btnClearCashier;
+            this.btnClearCashier.Size = new System.Drawing.Size(88, 34);
+            this.btnClearCashier.TabIndex = 6;
+            this.btnClearCashier.Text = "Clear";
+            this.btnClearCashier.Click += new System.EventHandler(this.btnClearCashier_Click);
             // 
-            // guna2Button1
+            // btnClearAddProdCashier
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(163, 266);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Tambah";
+            this.btnClearAddProdCashier.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearAddProdCashier.CheckedState.Parent = this.btnClearAddProdCashier;
+            this.btnClearAddProdCashier.CustomImages.Parent = this.btnClearAddProdCashier;
+            this.btnClearAddProdCashier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAddProdCashier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAddProdCashier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearAddProdCashier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearAddProdCashier.DisabledState.Parent = this.btnClearAddProdCashier;
+            this.btnClearAddProdCashier.FillColor = System.Drawing.Color.Blue;
+            this.btnClearAddProdCashier.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClearAddProdCashier.ForeColor = System.Drawing.Color.White;
+            this.btnClearAddProdCashier.HoverState.Parent = this.btnClearAddProdCashier;
+            this.btnClearAddProdCashier.Location = new System.Drawing.Point(255, 264);
+            this.btnClearAddProdCashier.Name = "btnClearAddProdCashier";
+            this.btnClearAddProdCashier.ShadowDecoration.Parent = this.btnClearAddProdCashier;
+            this.btnClearAddProdCashier.Size = new System.Drawing.Size(88, 34);
+            this.btnClearAddProdCashier.TabIndex = 7;
+            this.btnClearAddProdCashier.Text = "Clear";
+            this.btnClearAddProdCashier.Click += new System.EventHandler(this.btnClearAddProdCashier_Click);
             // 
-            // guna2TextBox1
+            // btnTambah
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(143, 110);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox1.TabIndex = 1;
+            this.btnTambah.BackColor = System.Drawing.Color.Transparent;
+            this.btnTambah.CheckedState.Parent = this.btnTambah;
+            this.btnTambah.CustomImages.Parent = this.btnTambah;
+            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambah.DisabledState.Parent = this.btnTambah;
+            this.btnTambah.FillColor = System.Drawing.Color.Blue;
+            this.btnTambah.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTambah.ForeColor = System.Drawing.Color.White;
+            this.btnTambah.HoverState.Parent = this.btnTambah;
+            this.btnTambah.Location = new System.Drawing.Point(143, 264);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.ShadowDecoration.Parent = this.btnTambah;
+            this.btnTambah.Size = new System.Drawing.Size(92, 34);
+            this.btnTambah.TabIndex = 8;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
-            // guna2TextBox2
+            // lstViewCashier
             // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(143, 183);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(200, 36);
-            this.guna2TextBox2.TabIndex = 2;
+            this.lstViewCashier.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nameCol,
+            this.hargaCol,
+            this.jumlahCol,
+            this.totalCol});
+            this.lstViewCashier.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lstViewCashier.FullRowSelect = true;
+            this.lstViewCashier.Location = new System.Drawing.Point(382, 110);
+            this.lstViewCashier.Name = "lstViewCashier";
+            this.lstViewCashier.OwnerDraw = true;
+            this.lstViewCashier.Size = new System.Drawing.Size(481, 401);
+            this.lstViewCashier.TabIndex = 4;
+            this.lstViewCashier.UseCompatibleStateImageBehavior = false;
+            this.lstViewCashier.UseSelectable = true;
+            this.lstViewCashier.View = System.Windows.Forms.View.Details;
+            // 
+            // nameCol
+            // 
+            this.nameCol.Text = "Nama Produk";
+            this.nameCol.Width = 200;
+            // 
+            // hargaCol
+            // 
+            this.hargaCol.Text = "Harga";
+            this.hargaCol.Width = 100;
+            // 
+            // jumlahCol
+            // 
+            this.jumlahCol.Text = "Jumlah";
+            this.jumlahCol.Width = 75;
+            // 
+            // totalCol
+            // 
+            this.totalCol.Text = "Total";
+            this.totalCol.Width = 100;
+            // 
+            // tbQtty
+            // 
+            this.tbQtty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbQtty.DefaultText = "";
+            this.tbQtty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbQtty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbQtty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbQtty.DisabledState.Parent = this.tbQtty;
+            this.tbQtty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbQtty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbQtty.FocusedState.Parent = this.tbQtty;
+            this.tbQtty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbQtty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbQtty.HoverState.Parent = this.tbQtty;
+            this.tbQtty.Location = new System.Drawing.Point(143, 183);
+            this.tbQtty.Name = "tbQtty";
+            this.tbQtty.PasswordChar = '\0';
+            this.tbQtty.PlaceholderText = "";
+            this.tbQtty.SelectedText = "";
+            this.tbQtty.ShadowDecoration.Parent = this.tbQtty;
+            this.tbQtty.Size = new System.Drawing.Size(200, 36);
+            this.tbQtty.TabIndex = 2;
+            // 
+            // tbProdName
+            // 
+            this.tbProdName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbProdName.DefaultText = "";
+            this.tbProdName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbProdName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbProdName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbProdName.DisabledState.Parent = this.tbProdName;
+            this.tbProdName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbProdName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbProdName.FocusedState.Parent = this.tbProdName;
+            this.tbProdName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbProdName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbProdName.HoverState.Parent = this.tbProdName;
+            this.tbProdName.Location = new System.Drawing.Point(143, 110);
+            this.tbProdName.Name = "tbProdName";
+            this.tbProdName.PasswordChar = '\0';
+            this.tbProdName.PlaceholderText = "";
+            this.tbProdName.SelectedText = "";
+            this.tbProdName.ShadowDecoration.Parent = this.tbProdName;
+            this.tbProdName.Size = new System.Drawing.Size(200, 36);
+            this.tbProdName.TabIndex = 1;
+            this.tbProdName.Leave += new System.EventHandler(this.tbProdName_Leave);
+            // 
+            // lblRpTotal
+            // 
+            this.lblRpTotal.AutoSize = true;
+            this.lblRpTotal.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
+            this.lblRpTotal.Location = new System.Drawing.Point(643, 514);
+            this.lblRpTotal.Name = "lblRpTotal";
+            this.lblRpTotal.Size = new System.Drawing.Size(59, 30);
+            this.lblRpTotal.TabIndex = 0;
+            this.lblRpTotal.Text = "Rp 0";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
+            this.lblTotal.Location = new System.Drawing.Point(558, 514);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(79, 30);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "Total :";
             // 
             // lblJumlah
             // 
@@ -220,73 +336,60 @@
             // 
             this.lblJudul.AutoSize = true;
             this.lblJudul.Font = new System.Drawing.Font("SimSun-ExtB", 25F);
-            this.lblJudul.Location = new System.Drawing.Point(365, 0);
+            this.lblJudul.Location = new System.Drawing.Point(365, 4);
             this.lblJudul.Name = "lblJudul";
             this.lblJudul.Size = new System.Drawing.Size(123, 42);
             this.lblJudul.TabIndex = 0;
             this.lblJudul.Text = "Kasir";
             // 
+            // lblProduk
+            // 
+            this.lblProduk.AutoSize = true;
+            this.lblProduk.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
+            this.lblProduk.Location = new System.Drawing.Point(22, 110);
+            this.lblProduk.Name = "lblProduk";
+            this.lblProduk.Size = new System.Drawing.Size(87, 30);
+            this.lblProduk.TabIndex = 0;
+            this.lblProduk.Text = "Produk";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.lblUser.Location = new System.Drawing.Point(12, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(22, 35);
+            this.lblUser.TabIndex = 2;
+            this.lblUser.Text = " ";
+            this.lblUser.Click += new System.EventHandler(this.lblKasir_Click);
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogout.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.lblLogout.Location = new System.Drawing.Point(12, 637);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(113, 35);
+            this.lblLogout.TabIndex = 2;
+            this.lblLogout.Text = "Log Out";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
+            // lblManageMember
+            // 
+            this.lblManageMember.AutoSize = true;
+            this.lblManageMember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblManageMember.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.lblManageMember.Location = new System.Drawing.Point(12, 234);
+            this.lblManageMember.Name = "lblManageMember";
+            this.lblManageMember.Size = new System.Drawing.Size(206, 35);
+            this.lblManageMember.TabIndex = 0;
+            this.lblManageMember.Text = "Kelola Anggota";
+            this.lblManageMember.Click += new System.EventHandler(this.lblManageMember_Click);
+            // 
             // itemDataBindingSource
             // 
             this.itemDataBindingSource.DataSource = typeof(cashier_n_data.itemData);
-            // 
-            // metroListView1
-            // 
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nameCol,
-            this.hargaCol,
-            this.jumlahCol,
-            this.totalCol});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(382, 110);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(481, 201);
-            this.metroListView1.TabIndex = 4;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
-            // 
-            // nameCol
-            // 
-            this.nameCol.Text = "Nama Produk";
-            this.nameCol.Width = 149;
-            // 
-            // hargaCol
-            // 
-            this.hargaCol.Text = "Harga";
-            this.hargaCol.Width = 88;
-            // 
-            // jumlahCol
-            // 
-            this.jumlahCol.Text = "Jumlah";
-            this.jumlahCol.Width = 125;
-            // 
-            // totalCol
-            // 
-            this.totalCol.Text = "Total";
-            this.totalCol.Width = 95;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
-            this.lblTotal.Location = new System.Drawing.Point(377, 344);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(79, 30);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Total :";
-            // 
-            // lblRpTotal
-            // 
-            this.lblRpTotal.AutoSize = true;
-            this.lblRpTotal.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
-            this.lblRpTotal.Location = new System.Drawing.Point(462, 344);
-            this.lblRpTotal.Name = "lblRpTotal";
-            this.lblRpTotal.Size = new System.Drawing.Size(59, 30);
-            this.lblRpTotal.TabIndex = 0;
-            this.lblRpTotal.Text = "Rp 0";
             // 
             // MainForms
             // 
@@ -298,8 +401,9 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblKasir);
             this.Controls.Add(this.lblLogout);
-            this.Controls.Add(this.lblAddProd);
+            this.Controls.Add(this.lblMngProd);
             this.Controls.Add(this.xButton);
+            this.Controls.Add(this.lblManageMember);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -307,6 +411,7 @@
             this.Load += new System.EventHandler(this.MainForms_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,16 +421,15 @@
         #endregion
 
         private System.Windows.Forms.Label xButton;
-        private System.Windows.Forms.Label lblAddProd;
+        private System.Windows.Forms.Label lblMngProd;
         private System.Windows.Forms.Label lblKasir;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLogout;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox tbQtty;
+        private Guna.UI2.WinForms.Guna2TextBox tbProdName;
         private System.Windows.Forms.Label lblProduk;
-        private MetroFramework.Controls.MetroListView metroListView1;
+        private MetroFramework.Controls.MetroListView lstViewCashier;
         private System.Windows.Forms.ColumnHeader nameCol;
         private System.Windows.Forms.ColumnHeader hargaCol;
         private System.Windows.Forms.ColumnHeader jumlahCol;
@@ -335,5 +439,11 @@
         private System.Windows.Forms.Label lblJumlah;
         private System.Windows.Forms.Label lblJudul;
         private System.Windows.Forms.BindingSource itemDataBindingSource;
+        private Guna.UI2.WinForms.Guna2PictureBox pictBox;
+        private Guna.UI2.WinForms.Guna2Button btnDelItemCashier;
+        private Guna.UI2.WinForms.Guna2Button btnClearCashier;
+        private Guna.UI2.WinForms.Guna2Button btnClearAddProdCashier;
+        private Guna.UI2.WinForms.Guna2Button btnTambah;
+        private System.Windows.Forms.Label lblManageMember;
     }
 }
