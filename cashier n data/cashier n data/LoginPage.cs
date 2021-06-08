@@ -52,6 +52,14 @@ namespace cashier_n_data
                 MainForms mainForms = new MainForms();
                 mainForms.Show();
                 MessageBox.Show(LoginHandler.Isadmin.ToString());
+
+                using (var db = new CashierDBEntities())
+                {
+                    var login = db.LoginDatas.First<LoginData>();
+                    login.lastlogin = DateTime.Now;
+                    db.SaveChanges();
+                }
+
                 this.Hide();
             }
             else
