@@ -115,64 +115,105 @@ namespace cashier_n_data
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            //add data
-            using (var db = new CashierDBEntities())
+            int i;
+            if (int.TryParse(tbHargaProd.Text.ToString(), out i))
             {
-                itemData data = new itemData
+                //add data
+                using (var db = new CashierDBEntities())
                 {
-                    itemName = tbNamaProd.Text.ToString(),
-                    itemPrice = tbHargaProd.Text.ToString(),
-                    itemDescription = "-",
-                    itemBarcode = "-",
-                };
-                db.itemDatas.Add(data);
-                db.SaveChanges();
+                    itemData data = new itemData
+                    {
+                        itemName = tbNamaProd.Text.ToString(),
+                        itemPrice = tbHargaProd.Text.ToString(),
+                        itemDescription = "-",
+                        itemBarcode = "-",
+                    };
+                    db.itemDatas.Add(data);
+                    db.SaveChanges();
 
-                itemPicture item = new itemPicture
+                    itemPicture item = new itemPicture
+                    {
+                        itemid = data.itemid,
+                        itemPicture1 = ImgConverter.convertImgToByte(pictBox.Image),
+                    };
+                    itemBarcode barcode = new itemBarcode
+                    {
+                        itemid = data.itemid,
+                        itemBarcode1 = null,
+                    };
+
+                    db.itemPictures.Add(item);
+                    db.itemBarcodes.Add(barcode);
+                    db.SaveChanges();
+                }
+
+
+                //clear list view to avoid overdata
+                try
                 {
-                    itemid = data.itemid,
-                    itemPicture1 = ImgConverter.convertImgToByte(pictBox.Image),
-                };
-                itemBarcode barcode = new itemBarcode
+                    foreach (ListViewItem item in lstvwProd.Items)
+                    {
+                        lstvwProd.Items.Remove(item);
+                    }
+                }
+                catch (Exception ex)
                 {
-                    itemid = data.itemid,
-                    itemBarcode1 = null,
-                };
-                
-                db.itemPictures.Add(item);
-                db.itemBarcodes.Add(barcode);
-                db.SaveChanges();
+                    MessageBox.Show(ex.Message);
+                }
+
+                //reload data
+                using (var db = new CashierDBEntities())
+                {
+                    var query = from itemData in db.itemDatas select itemData;
+                    foreach (var item in query)
+                    {
+                        ListViewItem items = new ListViewItem();
+                        items.Text = item.itemName.ToString();
+                        items.SubItems.Add(item.itemPrice.ToString());
+
+                        lstvwProd.Items.Add(items);
+                    }
+                }
+
+                MessageBox.Show("Item Ditambahkan");
             }
+            else
+            {
+                MessageBox.Show("Harga Harus Angka");
+            }
+            
+        }
 
-
-            //clear list view to avoid overdata
+        private void btnDelItem_Click(object sender, EventArgs e)
+        {
             try
             {
-                foreach (ListViewItem item in lstvwProd.Items)
+                foreach (ListViewItem listView in lstvwProd.SelectedItems)
                 {
-                    lstvwProd.Items.Remove(item);
+                    listView.Remove();
+                    using (var db = new CashierDBEntities())
+                    {
+                        var query = from itemData in db.itemDatas where itemData.itemName == listView.Text select itemData;
+                        foreach (var item in query)
+                        {
+                            itemData data = new itemData
+                            {
+                                itemid = item.itemid,
+                            };
+                            db.itemBarcodes.RemoveRange(db.itemBarcodes.Where(p => p.itemid == data.itemid));
+                            db.itemPictures.RemoveRange(db.itemPictures.Where(p => p.itemid == data.itemid));
+                        }
+                        db.itemDatas.RemoveRange(db.itemDatas.Where(item => item.itemName == listView.Text));
+                        db.SaveChanges();
+                    }
                 }
+                MessageBox.Show("Data berhasil dihapus");
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
             }
-
-            //reload data
-            using (var db = new CashierDBEntities())
-            {
-                var query = from itemData in db.itemDatas select itemData;
-                foreach (var item in query)
-                {
-                    ListViewItem items = new ListViewItem();
-                    items.Text = item.itemName.ToString();
-                    items.SubItems.Add(item.itemPrice.ToString());
-
-                    lstvwProd.Items.Add(items);
-                }
-            }
-
-            MessageBox.Show("Item Ditambahkan");
         }
     }
 }

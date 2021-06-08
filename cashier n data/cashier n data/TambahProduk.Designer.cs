@@ -35,7 +35,7 @@
             this.pictBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbHargaProd = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNamaProd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelItem = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoad = new Guna.UI2.WinForms.Guna2Button();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
@@ -60,7 +60,7 @@
             this.guna2Panel1.Controls.Add(this.pictBox);
             this.guna2Panel1.Controls.Add(this.tbHargaProd);
             this.guna2Panel1.Controls.Add(this.tbNamaProd);
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
+            this.guna2Panel1.Controls.Add(this.btnDelItem);
             this.guna2Panel1.Controls.Add(this.btnLoad);
             this.guna2Panel1.Controls.Add(this.btnClear);
             this.guna2Panel1.Controls.Add(this.btnTambah);
@@ -159,26 +159,27 @@
             this.tbNamaProd.Size = new System.Drawing.Size(165, 36);
             this.tbNamaProd.TabIndex = 1;
             // 
-            // guna2Button3
+            // btnDelItem
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(583, 558);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(185, 34);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Text = "Hapus Item Terpilih";
+            this.btnDelItem.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelItem.CheckedState.Parent = this.btnDelItem;
+            this.btnDelItem.CustomImages.Parent = this.btnDelItem;
+            this.btnDelItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelItem.DisabledState.Parent = this.btnDelItem;
+            this.btnDelItem.FillColor = System.Drawing.Color.Blue;
+            this.btnDelItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelItem.ForeColor = System.Drawing.Color.White;
+            this.btnDelItem.HoverState.Parent = this.btnDelItem;
+            this.btnDelItem.Location = new System.Drawing.Point(583, 558);
+            this.btnDelItem.Name = "btnDelItem";
+            this.btnDelItem.ShadowDecoration.Parent = this.btnDelItem;
+            this.btnDelItem.Size = new System.Drawing.Size(185, 34);
+            this.btnDelItem.TabIndex = 3;
+            this.btnDelItem.Text = "Hapus Item Terpilih";
+            this.btnDelItem.Click += new System.EventHandler(this.btnDelItem_Click);
             // 
             // btnLoad
             // 
@@ -398,7 +399,7 @@
         private System.Windows.Forms.Label lblMngProd;
         private System.Windows.Forms.Label xButton;
         private Guna.UI2.WinForms.Guna2PictureBox pictBox;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnDelItem;
         private Guna.UI2.WinForms.Guna2Button btnClear;
         private System.Windows.Forms.Label lblManageMember;
         private System.Windows.Forms.Label label1;

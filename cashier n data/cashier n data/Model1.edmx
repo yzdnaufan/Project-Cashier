@@ -39,6 +39,7 @@
           <Property Name="username" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="lastlogin" Type="datetime2" Precision="2" />
+          <Property Name="isadmin" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -121,6 +122,7 @@
           <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="lastlogin" Type="DateTime" Precision="2" />
+          <Property Name="isadmin" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -250,6 +252,7 @@
           <EntitySetMapping Name="LoginDatas">
             <EntityTypeMapping TypeName="CashierDBModel.LoginData">
               <MappingFragment StoreEntitySet="LoginData">
+                <ScalarProperty Name="isadmin" ColumnName="isadmin" />
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />

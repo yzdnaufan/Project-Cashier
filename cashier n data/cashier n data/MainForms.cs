@@ -48,6 +48,14 @@ namespace cashier_n_data
         private void MainForms_Load(object sender, EventArgs e)
         {
             lblUser.Text = "Hai " + LoginHandler.Username + "!";
+
+            if (!LoginHandler.Isadmin)
+            {
+                lblMngProd.Text = "";
+                lblMngProd.Click -= lblMngProd_Click;
+                lblManageMember.Text = "";
+                lblManageMember.Click -= lblManageMember_Click;
+            }
         }
 
         
@@ -162,31 +170,38 @@ namespace cashier_n_data
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            using (var db = new CashierDBEntities())
+            int i;
+            if (int.TryParse(tbQtty.Text.ToString(), out i))
             {
-                string itemName = tbProdName.Text.ToLower();
-
-                var query = from itemData in db.itemDatas where itemData.itemName.ToLower() == itemName select itemData;
-                foreach (var produk in query)
+                using (var db = new CashierDBEntities())
                 {
-                    ListViewItem item = new ListViewItem();
-                    item.Text = tbProdName.Text;
-                    item.SubItems.Add(produk.itemPrice);
-                    item.SubItems.Add(tbQtty.Text);
-                    item.SubItems.Add (Convert.ToString(Convert.ToInt16(produk.itemPrice)*Convert.ToInt16(tbQtty.Text)));
+                    string itemName = tbProdName.Text.ToLower();
 
-                    lstViewCashier.Items.Add(item);
+                    var query = from itemData in db.itemDatas where itemData.itemName.ToLower() == itemName select itemData;
+                    foreach (var produk in query)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = tbProdName.Text;
+                        item.SubItems.Add(produk.itemPrice);
+                        item.SubItems.Add(tbQtty.Text);
+                        item.SubItems.Add(Convert.ToString(Convert.ToInt16(produk.itemPrice) * Convert.ToInt16(tbQtty.Text)));
+
+                        lstViewCashier.Items.Add(item);
+                    }
                 }
+                foreach (ListViewItem list in lstViewCashier.Items)
+                {
+                    totalPrice += Convert.ToInt32(list.SubItems[3].Text);
+                }
+
+                lblRpTotal.Text = "Rp " + totalPrice.ToString();
+
+                totalPrice = 0;
             }
-            foreach (ListViewItem list in lstViewCashier.Items)
+            else
             {
-                totalPrice += Convert.ToInt32(list.SubItems[3].Text);
+                MessageBox.Show("Jumlah Harus Angka");
             }
-
-            lblRpTotal.Text = "Rp " + totalPrice.ToString();
-
-            totalPrice = 0;
-
         }
     }
 }

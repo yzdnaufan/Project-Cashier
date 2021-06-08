@@ -12,6 +12,10 @@ namespace cashier_n_data
 
         private static bool loginstatus;
 
+        private static bool isadmin;
+
+
+
         public static bool Loginstatus {
             get => loginstatus;
             set => loginstatus = value; }
@@ -19,5 +23,8 @@ namespace cashier_n_data
         public static string Username {
             get => username;
             set => username = value; }
+        public static bool Isadmin {
+            get => isadmin;
+            set => isadmin = value; }
     }
 }

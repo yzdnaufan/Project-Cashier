@@ -13,6 +13,7 @@ namespace cashier_n_data
     public partial class LoginPage : Form
     {
         private bool loginStatus;
+        private bool isadmin;
 
         public LoginPage()
         {
@@ -33,13 +34,24 @@ namespace cashier_n_data
         {
             GetLoginStatus(tbUsername.Text.ToString(), tbPassword.Text.ToString());
 
+            using (var db = new CashierDBEntities())
+            {
+                var query = from LoginData in db.LoginDatas where tbUsername.Text.ToLower().ToString() == LoginData.username select LoginData;
+                foreach (var item in query)
+                {
+                    isadmin = item.isadmin;
+                }
+            }
+
             if (loginStatus)
             {
                 MessageBox.Show("Login Berhasil!");
                 LoginHandler.Username = tbUsername.Text.ToString();
                 LoginHandler.Loginstatus = true;
+                LoginHandler.Isadmin = isadmin;
                 MainForms mainForms = new MainForms();
                 mainForms.Show();
+                MessageBox.Show(LoginHandler.Isadmin.ToString());
                 this.Hide();
             }
             else

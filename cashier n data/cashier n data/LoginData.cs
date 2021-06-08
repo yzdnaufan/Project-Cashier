@@ -18,5 +18,6 @@ namespace cashier_n_data
         public string username { get; set; }
         public string password { get; set; }
         public Nullable<System.DateTime> lastlogin { get; set; }
+        public bool isadmin { get; set; }
     }
 }

@@ -29,29 +29,27 @@
         private void InitializeComponent()
         {
             this.passCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
-            this.nameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstViewAnggota = new MetroFramework.Controls.MetroListView();
+            this.usernameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.adminCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblManageMember = new System.Windows.Forms.Label();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHapus = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tbHargaProd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbNamaProd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnLoad = new Guna.UI2.WinForms.Guna2Button();
+            this.cbAdmin = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
-            this.lblHarga = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.lblJudul = new System.Windows.Forms.Label();
-            this.lblProduk = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblKasir = new System.Windows.Forms.Label();
             this.xButton = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.lblMngProd = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.adminCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.usernameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,28 +58,32 @@
             this.passCol.Text = "Password";
             this.passCol.Width = 100;
             // 
-            // metroListView1
+            // lstViewAnggota
             // 
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.nameCol,
+            this.lstViewAnggota.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.usernameCol,
             this.passCol,
             this.adminCol});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(394, 110);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(468, 443);
-            this.metroListView1.TabIndex = 5;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
+            this.lstViewAnggota.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lstViewAnggota.FullRowSelect = true;
+            this.lstViewAnggota.Location = new System.Drawing.Point(394, 110);
+            this.lstViewAnggota.Name = "lstViewAnggota";
+            this.lstViewAnggota.OwnerDraw = true;
+            this.lstViewAnggota.Size = new System.Drawing.Size(468, 443);
+            this.lstViewAnggota.TabIndex = 5;
+            this.lstViewAnggota.UseCompatibleStateImageBehavior = false;
+            this.lstViewAnggota.UseSelectable = true;
+            this.lstViewAnggota.View = System.Windows.Forms.View.Details;
             // 
-            // nameCol
+            // usernameCol
             // 
-            this.nameCol.Text = "Nama Anggota";
-            this.nameCol.Width = 200;
+            this.usernameCol.Text = "Username";
+            this.usernameCol.Width = 150;
+            // 
+            // adminCol
+            // 
+            this.adminCol.Text = "Admin";
+            this.adminCol.Width = 75;
             // 
             // lblManageMember
             // 
@@ -94,115 +96,161 @@
             this.lblManageMember.TabIndex = 17;
             this.lblManageMember.Text = "Kelola Anggota";
             // 
-            // guna2Button3
+            // btnHapus
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(677, 559);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(185, 34);
-            this.guna2Button3.TabIndex = 3;
-            this.guna2Button3.Text = "Hapus Item Terpilih";
+            this.btnHapus.BackColor = System.Drawing.Color.Transparent;
+            this.btnHapus.CheckedState.Parent = this.btnHapus;
+            this.btnHapus.CustomImages.Parent = this.btnHapus;
+            this.btnHapus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHapus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHapus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHapus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHapus.DisabledState.Parent = this.btnHapus;
+            this.btnHapus.FillColor = System.Drawing.Color.Blue;
+            this.btnHapus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHapus.ForeColor = System.Drawing.Color.White;
+            this.btnHapus.HoverState.Parent = this.btnHapus;
+            this.btnHapus.Location = new System.Drawing.Point(583, 559);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.ShadowDecoration.Parent = this.btnHapus;
+            this.btnHapus.Size = new System.Drawing.Size(185, 34);
+            this.btnHapus.TabIndex = 3;
+            this.btnHapus.Text = "Hapus Item Terpilih";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // guna2Button1
+            // btnClear
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(288, 288);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(88, 34);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Clear";
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.CheckedState.Parent = this.btnClear;
+            this.btnClear.CustomImages.Parent = this.btnClear;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.DisabledState.Parent = this.btnClear;
+            this.btnClear.FillColor = System.Drawing.Color.Blue;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.HoverState.Parent = this.btnClear;
+            this.btnClear.Location = new System.Drawing.Point(288, 288);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.ShadowDecoration.Parent = this.btnClear;
+            this.btnClear.Size = new System.Drawing.Size(88, 34);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel1.Controls.Add(this.metroListView1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.Controls.Add(this.tbHargaProd);
-            this.guna2Panel1.Controls.Add(this.tbNamaProd);
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.btnLoad);
+            this.guna2Panel1.Controls.Add(this.cbAdmin);
+            this.guna2Panel1.Controls.Add(this.lstViewAnggota);
+            this.guna2Panel1.Controls.Add(this.tbPassword);
+            this.guna2Panel1.Controls.Add(this.tbUsername);
+            this.guna2Panel1.Controls.Add(this.btnHapus);
+            this.guna2Panel1.Controls.Add(this.btnClear);
             this.guna2Panel1.Controls.Add(this.btnTambah);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.lblHarga);
+            this.guna2Panel1.Controls.Add(this.lblAdmin);
+            this.guna2Panel1.Controls.Add(this.lblPassword);
             this.guna2Panel1.Controls.Add(this.lblJudul);
-            this.guna2Panel1.Controls.Add(this.lblProduk);
+            this.guna2Panel1.Controls.Add(this.lblUsername);
             this.guna2Panel1.Location = new System.Drawing.Point(239, 80);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(878, 606);
             this.guna2Panel1.TabIndex = 16;
             // 
-            // tbHargaProd
+            // btnLoad
             // 
-            this.tbHargaProd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbHargaProd.DefaultText = "";
-            this.tbHargaProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbHargaProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbHargaProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHargaProd.DisabledState.Parent = this.tbHargaProd;
-            this.tbHargaProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHargaProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHargaProd.FocusedState.Parent = this.tbHargaProd;
-            this.tbHargaProd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbHargaProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHargaProd.HoverState.Parent = this.tbHargaProd;
-            this.tbHargaProd.Location = new System.Drawing.Point(211, 152);
-            this.tbHargaProd.Name = "tbHargaProd";
-            this.tbHargaProd.PasswordChar = '\0';
-            this.tbHargaProd.PlaceholderText = "";
-            this.tbHargaProd.SelectedText = "";
-            this.tbHargaProd.ShadowDecoration.Parent = this.tbHargaProd;
-            this.tbHargaProd.Size = new System.Drawing.Size(165, 36);
-            this.tbHargaProd.TabIndex = 2;
+            this.btnLoad.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoad.CheckedState.Parent = this.btnLoad;
+            this.btnLoad.CustomImages.Parent = this.btnLoad;
+            this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoad.DisabledState.Parent = this.btnLoad;
+            this.btnLoad.FillColor = System.Drawing.Color.Blue;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.HoverState.Parent = this.btnLoad;
+            this.btnLoad.Location = new System.Drawing.Point(774, 558);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.ShadowDecoration.Parent = this.btnLoad;
+            this.btnLoad.Size = new System.Drawing.Size(88, 34);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Muat";
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // tbNamaProd
+            // cbAdmin
             // 
-            this.tbNamaProd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNamaProd.DefaultText = "";
-            this.tbNamaProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbNamaProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbNamaProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNamaProd.DisabledState.Parent = this.tbNamaProd;
-            this.tbNamaProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNamaProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNamaProd.FocusedState.Parent = this.tbNamaProd;
-            this.tbNamaProd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbNamaProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNamaProd.HoverState.Parent = this.tbNamaProd;
-            this.tbNamaProd.Location = new System.Drawing.Point(211, 110);
-            this.tbNamaProd.Name = "tbNamaProd";
-            this.tbNamaProd.PasswordChar = '\0';
-            this.tbNamaProd.PlaceholderText = "";
-            this.tbNamaProd.SelectedText = "";
-            this.tbNamaProd.ShadowDecoration.Parent = this.tbNamaProd;
-            this.tbNamaProd.Size = new System.Drawing.Size(165, 36);
-            this.tbNamaProd.TabIndex = 1;
+            this.cbAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.cbAdmin.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAdmin.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAdmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAdmin.FocusedState.Parent = this.cbAdmin;
+            this.cbAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbAdmin.HoverState.Parent = this.cbAdmin;
+            this.cbAdmin.ItemHeight = 30;
+            this.cbAdmin.Items.AddRange(new object[] {
+            "Tidak",
+            "Ya"});
+            this.cbAdmin.ItemsAppearance.Parent = this.cbAdmin;
+            this.cbAdmin.Location = new System.Drawing.Point(211, 231);
+            this.cbAdmin.Name = "cbAdmin";
+            this.cbAdmin.ShadowDecoration.Parent = this.cbAdmin;
+            this.cbAdmin.Size = new System.Drawing.Size(140, 36);
+            this.cbAdmin.StartIndex = 0;
+            this.cbAdmin.TabIndex = 6;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.DefaultText = "";
+            this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.DisabledState.Parent = this.tbPassword;
+            this.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.FocusedState.Parent = this.tbPassword;
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.HoverState.Parent = this.tbPassword;
+            this.tbPassword.Location = new System.Drawing.Point(211, 152);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.PlaceholderText = "";
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.ShadowDecoration.Parent = this.tbPassword;
+            this.tbPassword.Size = new System.Drawing.Size(165, 36);
+            this.tbPassword.TabIndex = 2;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.DefaultText = "";
+            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.DisabledState.Parent = this.tbUsername;
+            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.FocusedState.Parent = this.tbUsername;
+            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.HoverState.Parent = this.tbUsername;
+            this.tbUsername.Location = new System.Drawing.Point(211, 110);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PasswordChar = '\0';
+            this.tbUsername.PlaceholderText = "";
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.ShadowDecoration.Parent = this.tbUsername;
+            this.tbUsername.Size = new System.Drawing.Size(165, 36);
+            this.tbUsername.TabIndex = 1;
             // 
             // btnTambah
             // 
@@ -224,16 +272,27 @@
             this.btnTambah.Size = new System.Drawing.Size(92, 34);
             this.btnTambah.TabIndex = 3;
             this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
-            // lblHarga
+            // lblAdmin
             // 
-            this.lblHarga.AutoSize = true;
-            this.lblHarga.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
-            this.lblHarga.Location = new System.Drawing.Point(22, 152);
-            this.lblHarga.Name = "lblHarga";
-            this.lblHarga.Size = new System.Drawing.Size(112, 30);
-            this.lblHarga.TabIndex = 0;
-            this.lblHarga.Text = "Password";
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI Black", 10F);
+            this.lblAdmin.Location = new System.Drawing.Point(23, 231);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(66, 23);
+            this.lblAdmin.TabIndex = 0;
+            this.lblAdmin.Text = "Admin";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
+            this.lblPassword.Location = new System.Drawing.Point(22, 152);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(112, 30);
+            this.lblPassword.TabIndex = 0;
+            this.lblPassword.Text = "Password";
             // 
             // lblJudul
             // 
@@ -245,15 +304,15 @@
             this.lblJudul.TabIndex = 0;
             this.lblJudul.Text = "Kelola Anggota";
             // 
-            // lblProduk
+            // lblUsername
             // 
-            this.lblProduk.AutoSize = true;
-            this.lblProduk.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
-            this.lblProduk.Location = new System.Drawing.Point(22, 110);
-            this.lblProduk.Name = "lblProduk";
-            this.lblProduk.Size = new System.Drawing.Size(117, 30);
-            this.lblProduk.TabIndex = 0;
-            this.lblProduk.Text = "Username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Black", 12.5F);
+            this.lblUsername.Location = new System.Drawing.Point(22, 110);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(117, 30);
+            this.lblUsername.TabIndex = 0;
+            this.lblUsername.Text = "Username";
             // 
             // lblUser
             // 
@@ -288,6 +347,7 @@
             this.xButton.Size = new System.Drawing.Size(33, 35);
             this.xButton.TabIndex = 11;
             this.xButton.Text = "X";
+            this.xButton.Click += new System.EventHandler(this.xButton_Click);
             // 
             // lblLogout
             // 
@@ -299,6 +359,7 @@
             this.lblLogout.Size = new System.Drawing.Size(113, 35);
             this.lblLogout.TabIndex = 14;
             this.lblLogout.Text = "Log Out";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // lblMngProd
             // 
@@ -311,82 +372,6 @@
             this.lblMngProd.TabIndex = 15;
             this.lblMngProd.Text = "Kelola Produk";
             this.lblMngProd.Click += new System.EventHandler(this.lblMngProd_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 10F);
-            this.label2.Location = new System.Drawing.Point(23, 194);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nama Anggota";
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(211, 194);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(165, 23);
-            this.guna2TextBox1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 10F);
-            this.label3.Location = new System.Drawing.Point(23, 231);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Admin";
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Ya",
-            "Tidak"});
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(211, 231);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.StartIndex = 1;
-            this.guna2ComboBox1.TabIndex = 6;
-            // 
-            // adminCol
-            // 
-            this.adminCol.Text = "Admin";
-            this.adminCol.Width = 75;
-            // 
-            // usernameCol
-            // 
-            this.usernameCol.Text = "Username";
-            this.usernameCol.Width = 150;
             // 
             // ManageMember
             // 
@@ -403,6 +388,7 @@
             this.Controls.Add(this.lblMngProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageMember";
             this.Load += new System.EventHandler(this.ManageMember_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -415,28 +401,26 @@
         #endregion
 
         private System.Windows.Forms.ColumnHeader passCol;
-        private MetroFramework.Controls.MetroListView metroListView1;
-        private System.Windows.Forms.ColumnHeader nameCol;
+        private MetroFramework.Controls.MetroListView lstViewAnggota;
         private System.Windows.Forms.Label lblManageMember;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnHapus;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox tbHargaProd;
-        private Guna.UI2.WinForms.Guna2TextBox tbNamaProd;
+        private Guna.UI2.WinForms.Guna2TextBox tbPassword;
+        private Guna.UI2.WinForms.Guna2TextBox tbUsername;
         private Guna.UI2.WinForms.Guna2Button btnTambah;
-        private System.Windows.Forms.Label lblHarga;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblJudul;
-        private System.Windows.Forms.Label lblProduk;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblKasir;
         private System.Windows.Forms.Label xButton;
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblMngProd;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbAdmin;
+        private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.ColumnHeader usernameCol;
         private System.Windows.Forms.ColumnHeader adminCol;
+        private Guna.UI2.WinForms.Guna2Button btnLoad;
     }
 }
