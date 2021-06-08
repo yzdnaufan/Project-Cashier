@@ -12,17 +12,11 @@ namespace cashier_n_data
 {
     public partial class LoginPage : Form
     {
-        private bool loginStatus;
         private bool isadmin;
 
         public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void LoginPage_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void xButton_Click(object sender, EventArgs e)
@@ -32,8 +26,6 @@ namespace cashier_n_data
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            GetLoginStatus(tbUsername.Text.ToString(), tbPassword.Text.ToString());
-
             using (var db = new CashierDBEntities())
             {
                 var query = from LoginData in db.LoginDatas where tbUsername.Text.ToLower().ToString() == LoginData.username select LoginData;
@@ -43,15 +35,17 @@ namespace cashier_n_data
                 }
             }
 
-            if (loginStatus)
+            GetLoginStatus getLogin = new GetLoginStatus();
+            if (getLogin.Method(tbUsername.Text.ToString(), tbPassword.Text.ToString()))
             {
                 MessageBox.Show("Login Berhasil!");
+
                 LoginHandler.Username = tbUsername.Text.ToString();
                 LoginHandler.Loginstatus = true;
                 LoginHandler.Isadmin = isadmin;
+
                 MainForms mainForms = new MainForms();
                 mainForms.Show();
-                MessageBox.Show(LoginHandler.Isadmin.ToString());
 
                 using (var db = new CashierDBEntities())
                 {
@@ -68,24 +62,7 @@ namespace cashier_n_data
             }
         }
 
-        private void GetLoginStatus(string LoginName, string LoginPass)
-        {
-            using (var db = new CashierDBEntities())
-            {
-
-                //get query for matching txtbox text and database
-                var query = from LoginData in db.LoginDatas where LoginData.username == LoginName && LoginData.password == LoginPass select LoginData;
-                if (query.Any())
-                {
-                    loginStatus = true;
-                }
-                else
-                {
-                    loginStatus = false;
-                }
-                    
-            }
-        }
+        
 
         private void tbUsername_MouseClick(object sender, MouseEventArgs e)
         {

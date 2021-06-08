@@ -26,5 +26,6 @@ namespace cashier_n_data
         public static bool Isadmin {
             get => isadmin;
             set => isadmin = value; }
+        
     }
 }
