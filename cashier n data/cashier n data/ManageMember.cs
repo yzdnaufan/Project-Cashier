@@ -31,6 +31,11 @@ namespace cashier_n_data
             this.Hide();
         }
 
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ManageMember_Load(object sender, EventArgs e)
         {
             lblUser.Text = "Hai " + LoginHandler.Username + "!";
@@ -43,57 +48,44 @@ namespace cashier_n_data
             Application.Exit();
         }
 
+        private void lstViewAnggota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void lblLogout_Click(object sender, EventArgs e)
         {
-            try
-            {
-                LoginHandler.Loginstatus = false;
-                LoginHandler.Username = "";
-                this.Hide();
-                LoginPage login = new LoginPage();
-                login.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            LoginHandler.Loginstatus = false;
+            LoginHandler.Username = "";
+            this.Hide();
+            LoginPage login = new LoginPage();
+            login.Show();
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            try
+            foreach (ListViewItem listView in lstViewAnggota.SelectedItems)
             {
-                foreach (ListViewItem listView in lstViewAnggota.SelectedItems)
+                listView.Remove();
+                using (var db = new CashierDBEntities())
                 {
-                    listView.Remove();
-                    using (var db = new CashierDBEntities())
-                    {
-                        db.LoginDatas.RemoveRange(db.LoginDatas.Where(item => item.username == listView.Text));
-                        db.SaveChanges();
-                    }
+                    db.LoginDatas.RemoveRange(db.LoginDatas.Where(item => item.username == listView.Text));
+                    db.SaveChanges();
                 }
-                MessageBox.Show("Data berhasil dihapus");
             }
-            catch (Exception ex)
-            {
+            MessageBox.Show("Data berhasil dihapus");
+        }
 
-                MessageBox.Show(ex.Message);
-            }
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             //clear list view first to prevent overdata
-            try
+            foreach (ListViewItem item in lstViewAnggota.Items)
             {
-                foreach (ListViewItem item in lstViewAnggota.Items)
-                {
-                    lstViewAnggota.Items.Remove(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                lstViewAnggota.Items.Remove(item);
             }
 
             //load data
@@ -112,11 +104,21 @@ namespace cashier_n_data
             }
         }
 
+        private void lblJudul_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbPassword.Text = "";
             tbUsername.Text = "";
             cbAdmin.SelectedIndex = 0;
+        }
+
+        private void lblAdmin_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -139,16 +141,9 @@ namespace cashier_n_data
 
 
                 //clear list view to avoid overdata
-                try
+                foreach (ListViewItem item in lstViewAnggota.Items)
                 {
-                    foreach (ListViewItem item in lstViewAnggota.Items)
-                    {
-                        lstViewAnggota.Items.Remove(item);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    lstViewAnggota.Items.Remove(item);
                 }
 
                 MessageBox.Show("Tambah data berhasil!");
@@ -157,7 +152,11 @@ namespace cashier_n_data
             {
                 MessageBox.Show("Username/Password tidak boleh kosong!");
             }
-            
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -93,7 +93,6 @@
             this.lblKasir.Size = new System.Drawing.Size(77, 35);
             this.lblKasir.TabIndex = 2;
             this.lblKasir.Text = "Kasir";
-            this.lblKasir.Click += new System.EventHandler(this.lblKasir_Click);
             // 
             // guna2Panel1
             // 
@@ -128,6 +127,7 @@
             this.pictBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictBox.TabIndex = 9;
             this.pictBox.TabStop = false;
+            this.pictBox.Click += new System.EventHandler(this.pictBox_Click);
             // 
             // btnDelItemCashier
             // 
@@ -234,6 +234,7 @@
             this.lstViewCashier.UseCompatibleStateImageBehavior = false;
             this.lstViewCashier.UseSelectable = true;
             this.lstViewCashier.View = System.Windows.Forms.View.Details;
+            this.lstViewCashier.SelectedIndexChanged += new System.EventHandler(this.lstViewCashier_SelectedIndexChanged);
             // 
             // nameCol
             // 
@@ -321,6 +322,7 @@
             this.lblTotal.Size = new System.Drawing.Size(79, 30);
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Total :";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // lblJumlah
             // 
@@ -331,6 +333,7 @@
             this.lblJumlah.Size = new System.Drawing.Size(88, 30);
             this.lblJumlah.TabIndex = 0;
             this.lblJumlah.Text = "Jumlah";
+            this.lblJumlah.Click += new System.EventHandler(this.lblJumlah_Click);
             // 
             // lblJudul
             // 
@@ -341,6 +344,7 @@
             this.lblJudul.Size = new System.Drawing.Size(123, 42);
             this.lblJudul.TabIndex = 0;
             this.lblJudul.Text = "Kasir";
+            this.lblJudul.Click += new System.EventHandler(this.lblJudul_Click);
             // 
             // lblProduk
             // 
@@ -351,6 +355,7 @@
             this.lblProduk.Size = new System.Drawing.Size(87, 30);
             this.lblProduk.TabIndex = 0;
             this.lblProduk.Text = "Produk";
+            this.lblProduk.Click += new System.EventHandler(this.lblProduk_Click);
             // 
             // lblUser
             // 
@@ -361,7 +366,6 @@
             this.lblUser.Size = new System.Drawing.Size(22, 35);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = " ";
-            this.lblUser.Click += new System.EventHandler(this.lblKasir_Click);
             // 
             // lblLogout
             // 

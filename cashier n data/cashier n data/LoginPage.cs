@@ -62,7 +62,11 @@ namespace cashier_n_data
             }
         }
 
-        
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void tbUsername_MouseClick(object sender, MouseEventArgs e)
         {
@@ -103,6 +107,21 @@ namespace cashier_n_data
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void WelcomeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelNama_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

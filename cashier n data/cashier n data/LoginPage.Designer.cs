@@ -60,6 +60,7 @@
             this.WelcomeLabel.Size = new System.Drawing.Size(138, 35);
             this.WelcomeLabel.TabIndex = 0;
             this.WelcomeLabel.Text = "Welcome!";
+            this.WelcomeLabel.Click += new System.EventHandler(this.WelcomeLabel_Click);
             // 
             // tbUsername
             // 
@@ -132,6 +133,7 @@
             this.LabelNama.Size = new System.Drawing.Size(301, 35);
             this.LabelNama.TabIndex = 0;
             this.LabelNama.Text = "Sistem Kasir Sederhana";
+            this.LabelNama.Click += new System.EventHandler(this.LabelNama_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -144,6 +146,7 @@
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(300, 300);
             this.guna2CirclePictureBox1.TabIndex = 4;
             this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
             // LoginPage
             // 
@@ -162,6 +165,7 @@
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

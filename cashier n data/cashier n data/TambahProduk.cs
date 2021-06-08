@@ -215,5 +215,30 @@ namespace cashier_n_data
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void lblJudul_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProduk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHarga_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TambahProduk_Move(object sender, EventArgs e)
+        {
+
+        }
     }
 }

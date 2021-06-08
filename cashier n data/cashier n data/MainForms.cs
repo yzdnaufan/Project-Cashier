@@ -203,5 +203,35 @@ namespace cashier_n_data
                 MessageBox.Show("Jumlah Harus Angka");
             }
         }
+
+        private void lblJumlah_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProduk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblJudul_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstViewCashier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

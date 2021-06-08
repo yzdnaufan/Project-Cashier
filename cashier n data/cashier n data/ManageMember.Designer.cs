@@ -74,6 +74,7 @@
             this.lstViewAnggota.UseCompatibleStateImageBehavior = false;
             this.lstViewAnggota.UseSelectable = true;
             this.lstViewAnggota.View = System.Windows.Forms.View.Details;
+            this.lstViewAnggota.SelectedIndexChanged += new System.EventHandler(this.lstViewAnggota_SelectedIndexChanged);
             // 
             // usernameCol
             // 
@@ -160,6 +161,7 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(878, 606);
             this.guna2Panel1.TabIndex = 16;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // btnLoad
             // 
@@ -283,6 +285,7 @@
             this.lblAdmin.Size = new System.Drawing.Size(66, 23);
             this.lblAdmin.TabIndex = 0;
             this.lblAdmin.Text = "Admin";
+            this.lblAdmin.Click += new System.EventHandler(this.lblAdmin_Click);
             // 
             // lblPassword
             // 
@@ -293,6 +296,7 @@
             this.lblPassword.Size = new System.Drawing.Size(112, 30);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password";
+            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // lblJudul
             // 
@@ -303,6 +307,7 @@
             this.lblJudul.Size = new System.Drawing.Size(312, 42);
             this.lblJudul.TabIndex = 0;
             this.lblJudul.Text = "Kelola Anggota";
+            this.lblJudul.Click += new System.EventHandler(this.lblJudul_Click);
             // 
             // lblUsername
             // 
@@ -313,6 +318,7 @@
             this.lblUsername.Size = new System.Drawing.Size(117, 30);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username";
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // lblUser
             // 

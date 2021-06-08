@@ -256,6 +256,7 @@
             this.label1.Size = new System.Drawing.Size(94, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gambar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblHarga
             // 
@@ -266,6 +267,7 @@
             this.lblHarga.Size = new System.Drawing.Size(76, 30);
             this.lblHarga.TabIndex = 0;
             this.lblHarga.Text = "Harga";
+            this.lblHarga.Click += new System.EventHandler(this.lblHarga_Click);
             // 
             // lblJudul
             // 
@@ -276,6 +278,7 @@
             this.lblJudul.Size = new System.Drawing.Size(291, 42);
             this.lblJudul.TabIndex = 0;
             this.lblJudul.Text = "Tambah Produk";
+            this.lblJudul.Click += new System.EventHandler(this.lblJudul_Click);
             // 
             // lblProduk
             // 
@@ -286,6 +289,7 @@
             this.lblProduk.Size = new System.Drawing.Size(154, 30);
             this.lblProduk.TabIndex = 0;
             this.lblProduk.Text = "Nama Produk";
+            this.lblProduk.Click += new System.EventHandler(this.lblProduk_Click);
             // 
             // lblUser
             // 
@@ -376,6 +380,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TambahProduk";
             this.Load += new System.EventHandler(this.TambahProduk_Load);
+            this.Move += new System.EventHandler(this.TambahProduk_Move);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBox)).EndInit();
