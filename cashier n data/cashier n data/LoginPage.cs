@@ -26,40 +26,48 @@ namespace cashier_n_data
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            using (var db = new CashierDBEntities())
+            try
             {
-                var query = from LoginData in db.LoginDatas where tbUsername.Text.ToLower().ToString() == LoginData.username select LoginData;
-                foreach (var item in query)
-                {
-                    isadmin = item.isadmin;
-                }
-            }
-
-            GetLoginStatus getLogin = new GetLoginStatus();
-            if (getLogin.Method(tbUsername.Text.ToString(), tbPassword.Text.ToString()))
-            {
-                MessageBox.Show("Login Berhasil!");
-
-                LoginHandler.Username = tbUsername.Text.ToString();
-                LoginHandler.Loginstatus = true;
-                LoginHandler.Isadmin = isadmin;
-
-                MainForms mainForms = new MainForms();
-                mainForms.Show();
-
                 using (var db = new CashierDBEntities())
                 {
-                    var login = db.LoginDatas.First<LoginData>();
-                    login.lastlogin = DateTime.Now;
-                    db.SaveChanges();
+                    var query = from LoginData in db.LoginDatas where tbUsername.Text.ToLower().ToString() == LoginData.username select LoginData;
+                    foreach (var item in query)
+                    {
+                        isadmin = item.isadmin;
+                    }
                 }
 
-                this.Hide();
+                GetLoginStatus getLogin = new GetLoginStatus();
+                if (getLogin.Method(tbUsername.Text.ToString(), tbPassword.Text.ToString()))
+                {
+                    MessageBox.Show("Login Berhasil!");
+
+                    LoginHandler.Username = tbUsername.Text.ToString();
+                    LoginHandler.Loginstatus = true;
+                    LoginHandler.Isadmin = isadmin;
+
+                    MainForms mainForms = new MainForms();
+                    mainForms.Show();
+
+                    using (var db = new CashierDBEntities())
+                    {
+                        var item = db.LoginDatas.FirstOrDefault(i => i.username == tbUsername.Text);
+                        item.lastlogin = DateTime.Now;
+                        db.SaveChanges();
+                    }
+
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Username atau password Anda salah");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username atau password Anda salah");
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
